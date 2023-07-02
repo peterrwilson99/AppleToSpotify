@@ -7,7 +7,7 @@ load_dotenv()
 client_id = os.getenv("client_id")
 client_secret = os.getenv("client_secret")
 redirect_uri = os.getenv("redirect_uri")
-username = os.getenv("username")
+user_id = os.getenv("user_id")
 playlist_id = os.getenv("playlist_id")
 playlist_privacy = os.getenv("playlist_privacy")
 
@@ -18,7 +18,7 @@ token = SpotifyOAuth(
     client_id=client_id,
     client_secret=client_secret,
     redirect_uri=redirect_uri,
-    username=username,
+    username=user_id,
 )
 
 sp = spotipy.Spotify(auth_manager=token)

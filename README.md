@@ -36,7 +36,7 @@ pip install -r requirements.txt
 - client_id: Your Spotify application client ID.
 - client_secret: Your Spotify application client secret.
 - redirect_uri: Your Spotify application redirect URI.
-- username: Your Spotify username.
+- user_id: Your Spotify user_id, can be found `https://open.spotify.com/user/USER_ID_HERE`
 - playlist_id: Spotify playlist ID where you want to clone the songs.
 - playlist_privacy: Either public or private, depending on your playlist's privacy setting.
 
@@ -47,7 +47,7 @@ apple_playlist_url=https://music.apple.com/us/playlist/mixtape/pl.u-JPAZZZ7tGlWK
 client_id=YOUR_SPOTIFY_CLIENT_ID
 client_secret=YOUR_SPOTIFY_CLIENT_SECRET
 redirect_uri=YOUR_SPOTIFY_REDIRECT_URI
-username=YOUR_SPOTIFY_USERNAME
+user_id=YOUR_SPOTIFY_USERID
 playlist_id=YOUR_SPOTIFY_PLAYLIST_ID
 playlist_privacy=public
 ```
