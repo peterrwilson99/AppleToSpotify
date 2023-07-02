@@ -11,7 +11,9 @@ def main():
     # remove all None values from apple_song_ids
     apple_song_ids = [x for x in apple_song_ids if x is not None]
     # only keep 100 songs
-    apple_song_ids = apple_song_ids[:50]
+    if len(apple_song_ids) > 100:
+        apple_song_ids = apple_song_ids[:99]
+
     update_playlist(apple_song_ids)
 
 
