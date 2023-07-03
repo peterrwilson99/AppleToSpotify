@@ -7,6 +7,7 @@ The project has the following python files:
 1. `main.py`: The driver file where the main execution happens.
 2. `apple.py`: Contains the function to fetch songs from an Apple Music playlist.
 3. `spotify.py`: Contains functions to interact with Spotify Web API to fetch song IDs, and update a Spotify playlist.
+4. `generator.py`: Setup script which takes user inputs to create the `.env` file necessary for execution.
 
 A `requirements.txt` file is also included which contains the necessary dependencies for the project. 
 
@@ -31,14 +32,26 @@ git clone https://github.com/peterrwilson99/AppleToSpotify
 pip install -r requirements.txt
 ```
 
-3. Create a .env file in the root directory of the project with the following variables:
-- apple_playlist_url: The URL of the Apple Music Playlist you want to clone to Spotify.
-- client_id: Your Spotify application client ID.
-- client_secret: Your Spotify application client secret.
-- redirect_uri: Your Spotify application redirect URI.
-- user_id: Your Spotify user_id, can be found `https://open.spotify.com/user/USER_ID_HERE`
-- playlist_id: Spotify playlist ID where you want to clone the songs.
-- playlist_privacy: Either public or private, depending on your playlist's privacy setting.
+3. Environment Setup
+
+This project requires some environment variables which are stored in a `.env` file. This file is not included in the repository for security reasons. To make setup easier, there is a Python script called `generator.py` which will guide you through the process of creating this .env file.
+
+To run the setup script, use the following command:
+
+```sh
+python3 generator.py
+```
+
+The script will prompt you to enter:
+
+- Your Apple Music Playlist URL
+- Your Spotify Application Client ID
+- Your Spotify Application Client Secret
+- The URL for your Spotify profile
+- The URL for your Spotify playlist you want to clone the songs to
+- The privacy of your playlist (public/private)
+
+After entering all the information, the script will create the .env file with all the necessary environment variables.
 
 The .env file should look something like this:
 
@@ -51,7 +64,6 @@ user_id=YOUR_SPOTIFY_USERID
 playlist_id=YOUR_SPOTIFY_PLAYLIST_ID
 playlist_privacy=public
 ```
-
 
 4. Run the program.
 ```sh
