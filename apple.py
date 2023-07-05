@@ -13,6 +13,8 @@ def get_apple_music_playlist():
     options.add_argument("--headless")  # Ensure GUI is off
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    # turn off outputs on console from webdriver
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
     # WebDriver Manager takes care of the rest
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
@@ -27,6 +29,8 @@ def get_apple_music_playlist():
     for song in songList:
         songData = song.text.split("\n")
         songs.append((songData[0], songData[1]))
-
+    if len(songs) == 0:
+        RuntimeError("No songs found in playlist, please check your playlist url and try again")
+    
     driver.quit()
     return songs
